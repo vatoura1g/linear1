@@ -1,0 +1,34 @@
+ALGORITHM linear
+VAR
+    arr1,arr2 : ARRAY_OF INTEGER;
+    i,j,n,m,sum,sum2:INTEGER
+BEGIN
+    n:=arr1.length-1
+    m:=arr2.length-1
+    sum:=0
+    sum2:=0
+    FOR i FROM 0 TO n STEP 1  DO
+     FOR j FROM 0 TO m STEP 1  DO
+          IF (arr1[i] = arr2[j]) THEN
+             sum2:=sum2+(arr1[i]*2)
+              BREAK;
+          END_IF
+          IF (j=m) THEN
+                   sum:=sum+arr1[i]
+          END_IF
+     END_FOR
+        END_FOR
+        FOR j FROM 0 TO n STEP 1  DO
+            FOR i FROM 0 TO n STEP 1  DO
+                IF (arr1[i] = arr2[j]) THEN
+                BREAK;
+                END_IF
+                IF (i=n)) THEN
+                    sum:=sum+arr2[j]
+                END_IF
+            END_FOR
+        END_FOR
+
+    Write ("the sum is:",sum)
+
+END
